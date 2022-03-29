@@ -13,7 +13,6 @@ export default function Signup() {
   const handleFileChange = e => {
     setThumbnail(null)
     let selected = e.target.files[0]
-    console.log(selected)
 
     if (!selected) {
       setThumbnailError('Please select an image file')
@@ -27,11 +26,14 @@ export default function Signup() {
       setThumbnailError('Image file size must be less than 1MB')
       return
     }
+    
+    setThumbnailError(null)
+    setThumbnail(selected)
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(email, password, displayName)
+    console.log(email, password, displayName, thumbnail)
   }
 
   return (
@@ -71,6 +73,7 @@ export default function Signup() {
           type="file"
           onChange={handleFileChange}
         />
+        {thumbnailError && <p className='error'>{thumbnailError}</p>}
       </label>
       <button className="btn">Sign up</button>
     </form>
