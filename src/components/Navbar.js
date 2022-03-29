@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useLogout } from '../hooks/useLogout'
 
 // styles & images
 import './Navbar.css'
@@ -7,6 +8,8 @@ import Temple from '../assets/temple.svg'
 import React from 'react'
 
 export default function Navbar() {
+  const { logout, isLoading } = useLogout()
+
   return (
     <nav className='navbar'>
       <ul>
@@ -20,7 +23,8 @@ export default function Navbar() {
         <li><Link to='/login'>Login</Link></li>
         <li><Link to='/signup'>Signup</Link></li>
         <li>
-          <button className='btn'>Logout</button>
+          {!isLoading && <button onClick={logout} className='btn'>Logout</button>}
+          {isLoading && <button className='btn' disabled>loging out...</button>}
         </li>
       </ul>
     </nav>
