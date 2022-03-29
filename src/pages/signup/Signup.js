@@ -9,6 +9,12 @@ export default function Signup() {
   const [displayName, setDisplayName] = useState('')
   const [thumbnail, setThumbnail] = useState(null)
 
+  const handleFileChange = e => {
+    setThumbnail(null)
+    let selected = e.target.files[0]
+    console.log(selected)
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     console.log(email, password, displayName)
@@ -49,6 +55,7 @@ export default function Signup() {
         <input 
           required
           type="file"
+          onChange={handleFileChange}
         />
       </label>
       <button className="btn">Sign up</button>
