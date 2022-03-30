@@ -5,7 +5,7 @@ import Avatar from './Avatar'
 import './UserList.css'
 
 export default function UserList() {
-    const { error, documents} = useCollection()
+    const { error, documents} = useCollection('users')
 
   return (
     <div className='user-list'>

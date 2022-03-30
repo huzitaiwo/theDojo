@@ -10,6 +10,7 @@ import Login from './pages/login/Login'
 import Signup from './pages/signup/Signup'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import UserList from './components/UserList'
 
 function App() {
   const { user, authIsReady } = useAuthContext()
@@ -44,6 +45,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        {user && <UserList />}
         </BrowserRouter>
       )}
     </div>
