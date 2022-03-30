@@ -1,7 +1,15 @@
 import { useState } from 'react'
+import Select from 'react-select'
 
 // styles
 import './Create.css'
+
+const categories = [
+  { value: 'development', label: 'Development' },
+  { value: 'design', label: 'Design' },
+  { value: 'sales', label: 'Sales' },
+  { value: 'marketing', label: 'Marketing' },
+]
 
 export default function Create() {
   // form field values
@@ -49,7 +57,9 @@ export default function Create() {
         </label>
         <label>
           <span>Project category:</span>
-          {/* select here later */}
+          <Select 
+            
+          />
         </label>
         <label>
           <span>Assign to:</span>
