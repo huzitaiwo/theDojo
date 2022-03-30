@@ -35,7 +35,7 @@ export default function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log(name, details, dueDate, category.value)
+    console.log(name, details, dueDate, category.value, assignedUsers)
   }
 
 
@@ -81,6 +81,7 @@ export default function Create() {
           <Select 
             options={users}
             onChange={option => setAssignedUsers(option)}
+            isMulti
           />
         </label>
 
