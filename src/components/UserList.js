@@ -12,7 +12,8 @@ export default function UserList() {
       <h2>All Users</h2>
       {error && <p className='error'>{error}</p>}
       {documents && documents.map(user => (
-        <div key={user.id}>
+        <div key={user.id} className='user-list-item'>
+          {user.online && <span className='online-user' />}
           <span>{user.displayName}</span>
           <Avatar src={user.photoURL} alt='user avatar' />
         </div>
