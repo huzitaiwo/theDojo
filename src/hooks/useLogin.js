@@ -19,6 +19,9 @@ export const useLogin = () => {
         throw new Error('Could not complete login')
       }
 
+      //update online status
+      await projectFirestore.collection('users').doc(res.user.uid).update({ online: true })
+
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
 
