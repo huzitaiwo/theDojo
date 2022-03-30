@@ -1,5 +1,5 @@
 import { useCollection } from '../hooks/useCollection'
-import { Avatar } from './Avatar'
+import Avatar from './Avatar'
 
 // styles
 import './UserList.css'
