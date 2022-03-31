@@ -49,6 +49,12 @@ export default function Create() {
       return
     }
 
+    const createdBy = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      id: user.id
+    }
+
     const project = {
       name,
       details,
