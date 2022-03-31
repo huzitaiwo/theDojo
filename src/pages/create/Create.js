@@ -130,7 +130,9 @@ export default function Create() {
           />
         </label>
 
-        <button className="btn">Add Project</button>
+        {!response.isLoading && <button className="btn">Add Project</button>}
+        {response.isLoading && <button className="btn" disabled>Adding project...</button>}
+        {response.error && <div className='error'>{response.error}</div>}
         {formError && <p className='error'>{formError}</p>}
       </form>
     </div>
