@@ -11,7 +11,7 @@ export default function Dashboard() {
     <div>
       <h2 className="page-title">Dashboard</h2>
       {error && <div className='error'>{error}</div>}
-      {documents && <ProjectList documents={projects} />}
+      {documents && <ProjectList projects={documents} />}
     </div>
   )
 }
