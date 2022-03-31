@@ -1,10 +1,14 @@
+import { useCollection } from '../../hooks/useCollection'
+
 // styles
 import './Dashboard.css'
 
-import React from 'react'
-
 export default function Dashboard() {
+  const { documents, error, isLoading } = useCollection('projects')
+
   return (
-    <div>Dashboard</div>
+    <div>
+      
+    </div>
   )
 }
