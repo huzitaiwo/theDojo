@@ -77,14 +77,12 @@ export default function Create() {
       assignedUsersList
     }
 
-    addDocument(project)
-  }
+    await addDocument(project)
 
-  useEffect(() => {
-    if (response.success) {
+    if(response.success) {
       history.push('/')
     }
-  }, [response.success])
+  }
 
   return (
     <div className="create-form">
