@@ -8,7 +8,11 @@ export default function Dashboard() {
 
   return (
     <div>
-      
+      <h2 className="page-title">Dashboard</h2>
+      {error && <div className='error'>{error}</div>}
+      {documents && documents.map(project => (
+        <p key={project.id}>{project.name}</p>
+      ))}
     </div>
   )
 }
