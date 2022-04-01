@@ -10,7 +10,7 @@ export default function Dashboard() {
   return (
     <div>
       <h2 className="page-title">Dashboard</h2>
-      {isLoading && <div className='error'>loading...</div>}
+      {isLoading && <div>loading...</div>}
       {error && <div className='error'>{error}</div>}
       {documents && <ProjectList projects={documents} />}
     </div>
