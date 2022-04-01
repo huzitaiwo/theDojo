@@ -9,12 +9,16 @@ export default function Project() {
   const { error, document } = useDocument('projects', id)
 
   if(error) {
-    return <div className='error'>{eror}</div>
+    return <div className='error'>{error}</div>
+  }
+
+  if(!document) {
+    return <div className='loading'>loading...</div>
   }
 
   return (
-    <div>
-
+    <div className='project-details'>
+      <h1>{document.name}</h1>
     </div>
   )
 }
