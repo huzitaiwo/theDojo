@@ -17,7 +17,6 @@ export const useDocument = (collection, id) => {
       else {
         setError('no such document')
       }
-      console.log(snapshot)
     }, (err) => {
       console.log(err.message)
       setError('failed to get document')
