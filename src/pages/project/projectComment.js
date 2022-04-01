@@ -9,7 +9,15 @@ export default function projectComment() {
   const handleSubmit =  async (e) => {
     e.preventDefault()
 
-    // const comm
+    const commentToAdd = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      content: newComment,
+      createdAt: timestamp.fromDate(new Date()),
+      id: Math.random()
+    }
+
+    console.log(commentToAdd)
   }
 
   return (
