@@ -71,9 +71,11 @@ export const useFirestore = collection => {
 
     try {
       const updatedDocument = await ref.doc(id).update(updates)
+      dispatchIfNotUnMounted({ type: 'UPDATE_DOCUMENT', payload: updateDocument })
     }
     catch (err) {
-      dispatchIfNotUnMounted({ type: 'ERROR', payload: 'could not delete' })
+      dispatchIfNotUnMounted({ type: 'ERROR', payload: err.message })
+      return null
     }
   }
 
