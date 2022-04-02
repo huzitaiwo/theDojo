@@ -45,7 +45,6 @@ export const useFirestore = collection => {
       const createdAt = timestamp.fromDate(new Date())
       const addedDocument = await ref.add({ ...doc, createdAt })
       dispatchIfNotUnMounted({ type: 'ADD_DOCUMENT', payload: addedDocument })
-      
     }
     catch (err) {
       dispatchIfNotUnMounted({ type: 'ERROR', payload: err.message })
@@ -60,6 +59,18 @@ export const useFirestore = collection => {
     try {
       await ref.doc(id).delete()
       dispatchIfNotUnMounted({ type: "DELETE_DOCUMENT", payload: deleteDocument })
+    }
+    catch (err) {
+      dispatchIfNotUnMounted({ type: 'ERROR', payload: 'could not delete' })
+    }
+  }
+
+  // update document
+  const updateDocument = async (id, updates) => {
+    dispatch({ type: 'IS_LOADING' })
+
+    try {
+      const updatedDocument = await ref.doc(id).update(updates)
     }
     catch (err) {
       dispatchIfNotUnMounted({ type: 'ERROR', payload: 'could not delete' })

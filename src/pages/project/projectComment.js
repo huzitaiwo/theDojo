@@ -4,7 +4,7 @@ import { useAuthContext } from "../../hooks/useAuthContext"
 
 import React from 'react'
 
-export default function projectComment() {
+export default function ProjectComment() {
   const [newComment, setNewComment ] = useState('')
   const { user } = useAuthContext()
 

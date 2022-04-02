@@ -3,7 +3,7 @@ import { useDocument } from '../../hooks/useDocument'
 
 // styles
 import './Project.css'
-import ProjectComment from './projectComment'
+import ProjectComment from './ProjectComment'
 import ProjectSummary from './ProjectSummary'
 
 
