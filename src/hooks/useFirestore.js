@@ -16,6 +16,8 @@ const firestoreReducer = (state, action) => {
       return { isLoading: false, document: action.payload, error: null, success: true }
     case 'DELETE_DOCUMENT':
       return { isLoading: false, document: null, error: null, success: true }
+    case 'UPDATE_DOCUMENT':
+      return { isLoading: false, document: action.payload, error: null, success: true }
     case 'ERROR':
       return { isLoading: false, document: null, error: action.payload, success: false }
     default:
@@ -83,6 +85,6 @@ export const useFirestore = collection => {
     return () => setUnMounted(true)
   }, [])
 
-  return { addDocument, deleteDocument, response }
+  return { addDocument, deleteDocument, updateDocument, response }
 
 }
