@@ -40,13 +40,13 @@ export default function ProjectComment({ project }) {
           <li key={comment.id}>
             <div className="comment-author">
               <Avatar src={comment.photoURL} />
-              <p>{comment.displayName}</p>
-              <div className="comment-date">
-                <p>date here</p>
-              </div>
-              <div className="commnet-content">
-                <p>{comment.content}</p>
-              </div>
+            <p>{comment.displayName}</p>
+            </div>
+            <div className="comment-date">
+              <p>date here</p>
+            </div>
+            <div className="commnet-content">
+              <p>{comment.content}</p>
             </div>
           </li>
         ))}
