@@ -1,12 +1,14 @@
 import { useState } from "react"
 import { timestamp } from "../../firebase/config"
 import { useAuthContext } from "../../hooks/useAuthContext"
+import { useFirestore } from '../../hooks/useFirestore'
 
 import React from 'react'
 
-export default function ProjectComment() {
+export default function ProjectComment({ project }) {
   const [newComment, setNewComment ] = useState('')
   const { user } = useAuthContext()
+  const { updateDocument, response } = useFirestore('projects')
 
   const handleSubmit =  async (e) => {
     e.preventDefault()
@@ -19,7 +21,9 @@ export default function ProjectComment() {
       id: Math.random()
     }
 
-    console.log(commentToAdd)
+    await updateDocument(project.id, {
+      comments: { ...project.comments, commentToAdd }
+    })
   }
 
   return (
