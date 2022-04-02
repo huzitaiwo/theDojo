@@ -73,7 +73,7 @@ export const useFirestore = collection => {
 
     try {
       const updatedDocument = await ref.doc(id).update(updates)
-      dispatchIfNotUnMounted({ type: 'UPDATE_DOCUMENT', payload: updateDocument })
+      dispatchIfNotUnMounted({ type: 'UPDATE_DOCUMENT', payload: updatedDocument })
     }
     catch (err) {
       dispatchIfNotUnMounted({ type: 'ERROR', payload: err.message })
