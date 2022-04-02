@@ -2,7 +2,9 @@ import { useState } from "react"
 import { timestamp } from "../../firebase/config"
 import { useAuthContext } from "../../hooks/useAuthContext"
 
-export default function ProjectComment() {
+import React from 'react'
+
+export default function projectComment() {
   const [newComment, setNewComment ] = useState('')
   const { user } = useAuthContext()
 
