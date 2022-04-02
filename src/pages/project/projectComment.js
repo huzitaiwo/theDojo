@@ -3,7 +3,8 @@ import { timestamp } from "../../firebase/config"
 import { useAuthContext } from "../../hooks/useAuthContext"
 import { useFirestore } from '../../hooks/useFirestore'
 
-import React from 'react'
+//components
+import Avatar from "../../components/Avatar"
 
 export default function ProjectComment({ project }) {
   const [newComment, setNewComment ] = useState('')
@@ -31,9 +32,26 @@ export default function ProjectComment({ project }) {
   }
 
   return (
-    <div onSubmit={handleSubmit} className="project-comments">
+    <div className="project-comments">
       <h4>Project comments</h4>
-      <form className="add-comment">
+
+      <ul>
+        {project.comments.length > 0 && project.comments.map(comment => (
+          <li key={comment.id}>
+            <div className="comment-author">
+              <Avatar src={comment.photoURL} />
+              <p>{comment.displayName}</p>
+              <div className="comment-date">
+                <p>date here</p>
+              </div>
+              <div className="commnet-content">
+                <p>{comment.content}</p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <form onSubmit={handleSubmit} className="add-comment">
         <label>
           <span>Add new comment</span>
           <textarea
@@ -41,7 +59,9 @@ export default function ProjectComment({ project }) {
             onChange={e => {setNewComment(e.target.value)}}
             value={newComment}          
           ></textarea>
-          <button className="btn">Add comment</button>
+          {!response.isLoading && <button className="btn">Add comment</button>}
+          {response.isLoading && <button className="btn">Adding comment...</button>}
+          {response.error && <div className="error">{response.error}</div>}
         </label>
       </form>
     </div>
