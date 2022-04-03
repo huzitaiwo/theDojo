@@ -17,7 +17,7 @@ export default function Filter() {
           <button 
             key={filter}
             onClick={() => handleClick(filter)}
-            className={currentFilter === f ? 'active' : ''}
+            className={currentFilter === filter ? 'active' : ''}
           >
             {f}
           </button>  
