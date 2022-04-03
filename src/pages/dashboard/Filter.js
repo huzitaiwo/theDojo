@@ -19,7 +19,7 @@ export default function Filter() {
             onClick={() => handleClick(filter)}
             className={currentFilter === filter ? 'active' : ''}
           >
-            {f}
+            {filter}
           </button>  
         ))}
       </nav>
