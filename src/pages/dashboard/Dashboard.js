@@ -16,7 +16,7 @@ export default function Dashboard() {
     setCurentFilter(newFilter)
   }
 
-  const projects = documents.filter(document => {
+  const projects = documents ? documents.filter(document => {
     switch (currentFilter) {
       case 'all':
         return true
@@ -33,9 +33,11 @@ export default function Dashboard() {
       case 'sales':
       case 'marketing':
         console.log(document.category, currentFilter)
-        return document.category == currentFilter
+        return document.category === currentFilter
+      default:
+        return true
     }
-  })
+  }) : null
 
   return (
     <div>
