@@ -20,7 +20,7 @@ export default function ProjectSummary({ project }) {
     <div>
       <div className="project-summary">
         <h2 className="page-title">{project.name}</h2>
-        <div>
+        <div className='project-created_by'>
           <Avatar src={project.createdBy.photoURL} />
           <p>By {project.createdBy.displayName}</p>
         </div>

@@ -11,6 +11,13 @@
   padding: 30px;
   border-radius: 4px;
 }
+.project-summary .project-created_by {
+  display: flex;
+  align-items: flex-end;
+}
+.project-summary .project-created_by img {
+  margin-right: 10px;
+}
 .project-summary .due-date {
   margin: 10px 0;
   font-size: 0.9em;
