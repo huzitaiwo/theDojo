@@ -5,13 +5,14 @@ import { useHistory } from 'react-router-dom'
 //components
 import Avatar from "../../components/Avatar"
 
-export default function ProjectSummary({ project }) 
-  const history = uesHistory()
+export default function ProjectSummary({ project }) {
+  const history = useHistory()
   const { deleteDocument } = useFirestore('projects')
   const { user } = useAuthContext()
 
   const handleDelete = () => {
     deleteDocument(project.id)
+
     history.push('/')
   }
 
