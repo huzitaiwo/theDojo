@@ -6,14 +6,18 @@ import Avatar from './Avatar'
 import "./Sidebar.css"
 import DashboardIcon from '../assets/dashboard_icon.svg'
 import AddIcon from '../assets/add_icon.svg'
+import Close from '../assets/close.svg'
 
-export default function Sidebar() {
+export default function Sidebar({ pressed, setPressed}) {
   const { user } = useAuthContext()
 
   return (
-    <div className="sidebar">
+    <div className={pressed === true ? "sidebar" : "sidebar close-sidebar"}>
       <div className="sidebar-content">
         <div className="user">
+          <div onClick={() => setPressed(!pressed)} className="close">
+            <img src={Close} alt="close" />
+          </div>
           <Avatar src={user.photoURL}/>
           <p>Hey {user.displayName}</p>  
         </div>  

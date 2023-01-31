@@ -1,4 +1,5 @@
 .sidebar {
+  position: relative;
   width: 300px;
   min-width: 300px;
   background: var(--primary-color);
@@ -44,4 +45,25 @@
 }
 .sidebar .links .active img {
   filter: invert(40%);
+}
+
+.sidebar .close {
+  background: var(--bg-color);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: -17px;
+}
+
+.sidebar .close img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .sidebar.close-sidebar, .container.close-sidebar{
+    transform: translateX(-250px);
+  }
 }

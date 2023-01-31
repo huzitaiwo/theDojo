@@ -16,13 +16,14 @@ import UserList from './components/UserList'
 function App() {
   const { user, authIsReady } = useAuthContext()
   const [active, setActive] = useState(true)
+  const [pressed, setPressed] = useState(true)
 
   return (
     <div className="App">
       {authIsReady && (
         <BrowserRouter>
-        {user && <Sidebar />}
-        <div className="container">
+        {user && <Sidebar pressed={pressed} setPressed={setPressed} />}
+        <div className={pressed === true ? "container" : "container close-sidebar"}>
           <Navbar setActive={setActive} active={active} />
           <Switch>
             <Route exact path='/'>
