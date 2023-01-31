@@ -4,7 +4,7 @@ import Avatar from './Avatar'
 // styles
 import './UserList.css'
 
-export default function UserList() {
+export default function UserList({ active }) {
     const { error, documents} = useCollection('users')
 
   return (

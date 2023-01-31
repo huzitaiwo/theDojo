@@ -9,7 +9,7 @@ import Ellipse from '../assets/ellipse.svg'
 
 import React from 'react'
 
-export default function Navbar() {
+export default function Navbar({ setActive, active }) {
   const { logout, isLoading } = useLogout()
   const { user } = useAuthContext()
 
@@ -21,7 +21,7 @@ export default function Navbar() {
             <img src={Temple} alt="dojo icon" />
             <span>theDojo</span>
           </Link>
-          <img className='menu' src={Ellipse} alt="menu icon" />
+          <img onClick={() => setActive(!active)} className='menu' src={Ellipse} alt="menu icon" />
         </li>
 
         {!user && (
