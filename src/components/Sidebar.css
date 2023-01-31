@@ -1,12 +1,12 @@
 .sidebar {
   position: relative;
-  width: 300px;
-  min-width: 300px;
+  width: 260px;
+  min-width: 260px;
   background: var(--primary-color);
   min-height: 100vh;
   box-sizing: border-box;
-  position: relative;
   color: #fff;
+  z-index: 12;
 }
 .sidebar-content {
   position: fixed;
@@ -47,6 +47,11 @@
   filter: invert(40%);
 }
 
+@media (min-width: 801px) {
+  .sidebar .close {
+    display: none;
+  }
+}
 .sidebar .close {
   background: var(--bg-color);
   width: 25px;
@@ -60,6 +65,10 @@
 
 .sidebar .close img {
   width: 100%;
+}
+
+.sidebar .close img.r-180 {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 800px) {

@@ -23,7 +23,7 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
         {user && <Sidebar pressed={pressed} setPressed={setPressed} />}
-        <div className={pressed === true ? "container" : "container close-sidebar"}>
+        <div className={pressed === true ? "container  close-sidebar" : "container"}>
           <Navbar setActive={setActive} active={active} />
           <Switch>
             <Route exact path='/'>
@@ -48,7 +48,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-        {active && user && <UserList active={active} />}
+        {active && user && <UserList active={active} pressed={pressed} />}
         </BrowserRouter>
       )}
     </div>

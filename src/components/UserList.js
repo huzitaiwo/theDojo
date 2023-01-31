@@ -4,11 +4,11 @@ import Avatar from './Avatar'
 // styles
 import './UserList.css'
 
-export default function UserList({ active }) {
+export default function UserList({ pressed }) {
     const { error, documents} = useCollection('users')
 
   return (
-    <div className='user-list'>
+    <div className={pressed === true ? "user-list close-sidebar" : "user-list"}>
       <h2>All Users</h2>
       {error && <p className='error'>{error}</p>}
       {documents && documents.map(user => (

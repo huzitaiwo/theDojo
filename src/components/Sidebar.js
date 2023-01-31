@@ -12,11 +12,11 @@ export default function Sidebar({ pressed, setPressed}) {
   const { user } = useAuthContext()
 
   return (
-    <div className={pressed === true ? "sidebar" : "sidebar close-sidebar"}>
+    <div className={pressed === true ? "sidebar  close-sidebar" : "sidebar"}>
       <div className="sidebar-content">
         <div className="user">
           <div onClick={() => setPressed(!pressed)} className="close">
-            <img src={Close} alt="close" />
+            <img className={pressed === true ? "r-180" : ""} src={Close} alt="close" />
           </div>
           <Avatar src={user.photoURL}/>
           <p>Hey {user.displayName}</p>  
