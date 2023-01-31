@@ -5,6 +5,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 // styles & images
 import './Navbar.css'
 import Temple from '../assets/temple.svg'
+import Ellipse from '../assets/ellipse.svg'
 
 import React from 'react'
 
@@ -20,6 +21,7 @@ export default function Navbar() {
             <img src={Temple} alt="dojo icon" />
             <span>theDojo</span>
           </Link>
+          <img className='menu' src={Ellipse} alt="menu icon" />
         </li>
 
         {!user && (

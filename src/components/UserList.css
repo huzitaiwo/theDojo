@@ -1,6 +1,5 @@
 .user-list {
   width: 250px;
-  min-width: 250px;
   padding: 30px;
   box-sizing: border-box;
   background: #fbfbfb;
@@ -34,4 +33,12 @@
   background: #0ebb50;
   border-radius: 50%;
   margin-top: 2px;
+}
+
+@media (max-width: 1071px) {
+  .user-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }

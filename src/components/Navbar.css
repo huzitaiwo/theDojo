@@ -16,7 +16,14 @@
   letter-spacing: 1px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 80%;
   margin-right: auto;
+  position: relative;
+  z-index: 10;
+}
+.navbar .menu {
+  cursor: pointer;
 }
 .navbar .logo img {
   margin-right: 10px;
@@ -30,5 +37,4 @@
   margin-right: 20px;
   display: flex;
   align-items: center;
-
 }
