@@ -24,6 +24,7 @@
 }
 .navbar .menu {
   cursor: pointer;
+  display: none;
 }
 .navbar .logo img {
   margin-right: 10px;
