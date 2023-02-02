@@ -26,6 +26,11 @@
 .sidebar .links li {
   margin-top: 10px;
 }
+@media (min-width: 1071px) {
+  .sidebar .links li:nth-child(3) {
+    display: none;
+  }
+}
 .sidebar .links a {
   display: flex;
   padding: 10px;

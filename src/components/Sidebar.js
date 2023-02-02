@@ -39,7 +39,7 @@ export default function Sidebar({ pressed, setPressed}) {
             <li>
               <NavLink to="/userlist">
                 <img src={UserIcon} alt="user icon" />
-                <span>Active Users</span>
+                <span>All Users</span>
               </NavLink>
             </li>
           </ul>
