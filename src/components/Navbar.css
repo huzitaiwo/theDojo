@@ -19,12 +19,6 @@
   justify-content: space-between;
   width: 90%;
   margin-right: auto;
-  position: relative;
-  z-index: 13;
-}
-.navbar .menu {
-  cursor: pointer;
-  display: none;
 }
 .navbar .logo img {
   margin-right: 10px;

@@ -21,7 +21,6 @@ export default function Navbar({ setActive, active }) {
             <img src={Temple} alt="dojo icon" />
             <span>theDojo</span>
           </Link>
-          <img onClick={() => setActive(!active)} className='menu' src={Ellipse} alt="menu icon" />
         </li>
 
         {!user && (

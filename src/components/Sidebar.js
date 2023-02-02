@@ -6,6 +6,7 @@ import Avatar from './Avatar'
 import "./Sidebar.css"
 import DashboardIcon from '../assets/dashboard_icon.svg'
 import AddIcon from '../assets/add_icon.svg'
+import UserIcon from '../assets/users.svg'
 import Close from '../assets/close.svg'
 
 export default function Sidebar({ pressed, setPressed}) {
@@ -33,6 +34,12 @@ export default function Sidebar({ pressed, setPressed}) {
               <NavLink to="/create">
                 <img src={AddIcon} alt="add project icon" />
                 <span>New Project</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/userlist">
+                <img src={UserIcon} alt="user icon" />
+                <span>Active Users</span>
               </NavLink>
             </li>
           </ul>

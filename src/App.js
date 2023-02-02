@@ -34,6 +34,10 @@ function App() {
               {!user && <Redirect to='/login' />}
               {user&& <Create /> }
             </Route>
+            <Route path='/userlist'>
+              {!user && <Redirect to='/login' />}
+              {user && <UserList />}
+            </Route>
             <Route path='/projects/:id'>
               {!user && <Redirect to='/login' />}
               {user && <Project />}
@@ -48,7 +52,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-        {active && user && <UserList active={active} pressed={pressed} />}
+        {user && <UserList />}
         </BrowserRouter>
       )}
     </div>
