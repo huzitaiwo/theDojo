@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 
@@ -14,14 +15,16 @@ import UserList from './components/UserList'
 
 function App() {
   const { user, authIsReady } = useAuthContext()
+  const [active, setActive] = useState(true)
+  const [pressed, setPressed] = useState(true)
 
   return (
     <div className="App">
       {authIsReady && (
         <BrowserRouter>
-        {user && <Sidebar />}
-        <div className="container">
-          <Navbar />
+        {user && <Sidebar pressed={pressed} setPressed={setPressed} />}
+        <div className={pressed === true ? "container  close-sidebar" : "container"}>
+          <Navbar setActive={setActive} active={active} />
           <Switch>
             <Route exact path='/'>
               {!user && <Redirect to='/login' />}
@@ -30,6 +33,10 @@ function App() {
             <Route path='/create'>
               {!user && <Redirect to='/login' />}
               {user&& <Create /> }
+            </Route>
+            <Route path='/userlist'>
+              {!user && <Redirect to='/login' />}
+              {user && <UserList />}
             </Route>
             <Route path='/projects/:id'>
               {!user && <Redirect to='/login' />}

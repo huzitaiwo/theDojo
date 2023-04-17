@@ -8,7 +8,7 @@ export default function UserList() {
     const { error, documents} = useCollection('users')
 
   return (
-    <div className='user-list'>
+    <div className="user-list">
       <h2>All Users</h2>
       {error && <p className='error'>{error}</p>}
       {documents && documents.map(user => (

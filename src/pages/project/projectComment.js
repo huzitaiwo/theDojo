@@ -7,7 +7,7 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 //components
 import Avatar from "../../components/Avatar"
 
-export default function ProjectComment({ project }) {
+const ProjectComment = ({ project }) => {
   const [newComment, setNewComment ] = useState('')
   const { user } = useAuthContext()
   const { updateDocument, response } = useFirestore('projects')
@@ -68,3 +68,5 @@ export default function ProjectComment({ project }) {
     </div>
   )
 }
+
+export default ProjectComment

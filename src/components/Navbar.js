@@ -5,10 +5,11 @@ import { useAuthContext } from '../hooks/useAuthContext'
 // styles & images
 import './Navbar.css'
 import Temple from '../assets/temple.svg'
+import Ellipse from '../assets/ellipse.svg'
 
 import React from 'react'
 
-export default function Navbar() {
+export default function Navbar({ setActive, active }) {
   const { logout, isLoading } = useLogout()
   const { user } = useAuthContext()
 
